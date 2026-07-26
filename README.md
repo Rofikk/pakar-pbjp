@@ -1,6 +1,6 @@
-# Pakar PBJP
+# Pengadaan Online
 
-Aplikasi pakar berbasis web untuk membantu calon penyedia menilai kesiapan awal mengikuti Pengadaan Barang/Jasa Pemerintah (PBJP).
+Platform pengetahuan dan kepatuhan Pengadaan Barang/Jasa Pemerintah. Versi saat ini memuat portal awal, pusat regulasi, Pakar PBJP, panduan, dan prototipe Analisis Paket.
 
 ## Fitur
 
@@ -12,6 +12,8 @@ Aplikasi pakar berbasis web untuk membantu calon penyedia menilai kesiapan awal 
 - penyimpanan jawaban hanya pada browser;
 - hasil dapat dicetak atau disimpan sebagai PDF;
 - responsif untuk desktop dan perangkat seluler.
+- portal induk untuk pengembangan pusat pengetahuan dan alat kerja pengadaan;
+- prototipe Analisis Paket dengan keputusan awal GO/PERBAIKI/NO-GO.
 
 ## Batas penggunaan
 
@@ -30,4 +32,3 @@ Lalu buka `http://localhost:8000`.
 ## Publikasi
 
 Repositori menyertakan GitHub Actions untuk memublikasikan situs ke GitHub Pages setiap kali perubahan masuk ke branch `main`.
-
