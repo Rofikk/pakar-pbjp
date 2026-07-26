@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b3b33">
+  <meta name="description" content="Aplikasi pakar untuk membantu calon penyedia menilai kesiapan mengikuti Pengadaan Barang/Jasa Pemerintah.">
+  <title>Pakar PBJP — Pemeriksaan Kesiapan Penyedia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke isi</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Pakar PBJP beranda">
+      <span class="brand-mark">P</span>
+      <span><strong>Pakar PBJP</strong><small>Asisten kesiapan penyedia</small></span>
+    </a>
+    <nav aria-label="Navigasi utama">
+      <button class="nav-link active" data-view="home">Beranda</button>
+      <button class="nav-link" data-view="assessment">Mulai asesmen</button>
+      <button class="nav-link" data-view="rules">Basis aturan</button>
+    </nav>
+    <span class="update-badge">Diperbarui 26 Juli 2026</span>
+  </header>
+
+  <main id="main">
+    <section class="view active" id="home">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Sistem pakar pengadaan pemerintah</p>
+          <h1>Periksa kesiapan sebelum mengikuti proyek pemerintah.</h1>
+          <p class="lead">Jawab pertanyaan terarah untuk menemukan dokumen yang kurang, risiko kepatuhan, dan langkah prioritas sebelum mendaftar paket pengadaan.</p>
+          <div class="hero-actions">
+            <button class="primary" data-start>Periksa kesiapan <span>→</span></button>
+            <button class="secondary" data-view-link="rules">Lihat dasar aturan</button>
+          </div>
+          <p class="microcopy">Gratis · Tidak memerlukan akun · Jawaban tersimpan hanya di perangkat ini</p>
+        </div>
+        <div class="hero-panel" aria-label="Ringkasan proses">
+          <div class="panel-head">
+            <span>Alur pemeriksaan</span>
+            <span class="status-dot">Sistem aktif</span>
+          </div>
+          <ol class="process-list">
+            <li><span>01</span><div><strong>Profil usaha</strong><small>Jenis usaha, usia, bidang dan skala paket</small></div></li>
+            <li><span>02</span><div><strong>Legalitas & sistem</strong><small>NIB, KBLI, pajak, INAPROC dan SIKaP</small></div></li>
+            <li><span>03</span><div><strong>Kemampuan pelaksanaan</strong><small>Pengalaman, personel, alat dan keuangan</small></div></li>
+            <li><span>04</span><div><strong>Etika & risiko</strong><small>Konflik kepentingan dan integritas dokumen</small></div></li>
+          </ol>
+          <div class="panel-foot"><strong>Hasil:</strong> skor kesiapan + daftar tindakan</div>
+        </div>
+      </div>
+
+      <div class="trust-strip">
+        <p>Disusun berdasarkan kerangka regulasi PBJP yang berlaku</p>
+        <div>
+          <span>Perpres 16/2018</span><span>Perpres 12/2021</span><span>Perpres 46/2025</span><span>Pedoman LKPP</span>
+        </div>
+      </div>
+
+      <section class="feature-section">
+        <div class="section-heading">
+          <p class="eyebrow">Yang diperiksa</p>
+          <h2>Satu pemeriksaan, empat lapisan kepatuhan.</h2>
+        </div>
+        <div class="feature-grid">
+          <article><span class="icon">01</span><h3>Administrasi</h3><p>Legalitas, KBLI, pajak, pemilik manfaat, akun pengadaan, dan izin sektoral.</p></article>
+          <article><span class="icon">02</span><h3>Kualifikasi</h3><p>Pengalaman, kinerja penyedia, personel, peralatan, serta kemampuan keuangan.</p></article>
+          <article><span class="icon">03</span><h3>Paket & penawaran</h3><p>Kesesuaian bidang, metode pengadaan, dokumen pemilihan, harga, dan jadwal.</p></article>
+          <article><span class="icon">04</span><h3>Integritas</h3><p>Konflik kepentingan, dokumen palsu, pinjam bendera, gratifikasi, dan persekongkolan.</p></article>
+        </div>
+      </section>
+    </section>
+
+    <section class="view assessment-shell" id="assessment">
+      <aside class="assessment-side">
+        <button class="back-link" data-view-link="home">← Kembali</button>
+        <p class="eyebrow">Asesmen penyedia</p>
+        <h2 id="stageTitle">Profil paket</h2>
+        <p id="stageDescription">Tentukan konteks paket yang ingin Anda ikuti.</p>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Progres</span><strong id="progressText">1 dari 5</strong></div>
+          <div class="progress"><span id="progressBar"></span></div>
+        </div>
+        <ol class="stepper" id="stepper"></ol>
+        <div class="privacy-note"><strong>Privasi</strong><p>Data asesmen tidak dikirim ke server dan hanya tersimpan di browser Anda.</p></div>
+      </aside>
+
+      <div class="assessment-main">
+        <form id="assessmentForm" novalidate>
+          <div id="questions"></div>
+          <div class="form-actions">
+            <button type="button" class="secondary" id="prevBtn">← Sebelumnya</button>
+            <button type="button" class="primary" id="nextBtn">Berikutnya →</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="view result-view" id="result">
+      <div class="result-header">
+        <div>
+          <p class="eyebrow">Hasil pemeriksaan awal</p>
+          <h1>Ringkasan kesiapan penyedia</h1>
+          <p>Gunakan hasil ini sebagai daftar kerja sebelum membaca dokumen pemilihan paket yang sebenarnya.</p>
+        </div>
+        <div class="result-actions">
+          <button class="secondary" id="printBtn">Cetak / simpan PDF</button>
+          <button class="primary" id="restartBtn">Ulangi asesmen</button>
+        </div>
+      </div>
+      <div class="score-grid">
+        <article class="score-card">
+          <div class="score-ring" id="scoreRing"><span id="scoreValue">0</span><small>/100</small></div>
+          <div><p class="eyebrow">Skor kesiapan</p><h2 id="scoreLabel">Belum dihitung</h2><p id="scoreSummary"></p></div>
+        </article>
+        <article class="stat-card"><span class="stat-icon danger">!</span><div><strong id="criticalCount">0</strong><small>hambatan kritis</small></div></article>
+        <article class="stat-card"><span class="stat-icon warning">△</span><div><strong id="warningCount">0</strong><small>perlu diperbaiki</small></div></article>
+        <article class="stat-card"><span class="stat-icon good">✓</span><div><strong id="readyCount">0</strong><small>komponen siap</small></div></article>
+      </div>
+      <div class="result-layout">
+        <section>
+          <div class="result-section-head"><div><p class="eyebrow">Prioritas tindakan</p><h2>Apa yang perlu dilakukan?</h2></div><div class="filter-group" id="resultFilters"></div></div>
+          <div id="recommendations" class="recommendations"></div>
+        </section>
+        <aside class="result-aside">
+          <div class="aside-card"><p class="eyebrow">Profil asesmen</p><div id="profileSummary"></div></div>
+          <div class="aside-card caution"><strong>Catatan penting</strong><p>Hasil ini bukan keputusan Pokja/Pejabat Pengadaan dan bukan pendapat hukum. Dokumen pemilihan serta aturan sektoral paket tetap menjadi rujukan langsung.</p></div>
+          <div class="aside-card"><p class="eyebrow">Langkah selanjutnya</p><ol><li>Cari paket pada SIRUP/LPSE.</li><li>Unduh dokumen pemilihan.</li><li>Cocokkan seluruh persyaratan.</li><li>Ajukan pertanyaan saat pemberian penjelasan.</li></ol></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="view rules-view" id="rules">
+      <div class="page-intro">
+        <p class="eyebrow">Basis pengetahuan</p>
+        <h1>Regulasi dan prinsip yang digunakan.</h1>
+        <p>Aplikasi membedakan aturan umum PBJP, pedoman pelaksanaan, dan ketentuan sektoral. Status aturan harus diperiksa kembali ketika menilai paket nyata.</p>
+      </div>
+      <div class="rule-toolbar">
+        <input id="ruleSearch" type="search" placeholder="Cari aturan, topik, atau kata kunci…" aria-label="Cari basis aturan">
+        <select id="ruleCategory" aria-label="Filter kategori"><option value="all">Semua kategori</option></select>
+      </div>
+      <div class="rule-list" id="ruleList"></div>
+      <div class="rules-disclaimer"><strong>Batas penggunaan.</strong> Basis ini adalah alat edukasi dan pemeriksaan awal. Jika terdapat perbedaan, naskah resmi peraturan dan dokumen pemilihan yang berlaku harus didahulukan.</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">P</span><span><strong>Pakar PBJP</strong><small>Asisten kesiapan penyedia</small></span></div>
+    <p>Proyek sumber terbuka untuk literasi pengadaan yang berintegritas.</p>
+    <a href="https://github.com/Rofikk/pakar-pbjp" target="_blank" rel="noreferrer">Lihat di GitHub ↗</a>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
